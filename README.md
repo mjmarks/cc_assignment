@@ -1,10 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Context
 
-## Getting Started
+A retailer offers a rewards program to its customers, awarding points based on each recorded purchase.
+
+## Constraints
+
+- Given a record of every transaction during a three-month period, calculate the reward points earned for each customer per month and total.
+- A customer reeives 2 points for every dollar spent of $100 in each transaction, plus 1 point for every dollar spent between $50 and $100 in each transaction. (e.g. a $120 purchase = 2 _ $20 + 1 _ $50 = 90 points)
+
+`````if (amount >= 50 && amount < 100) {
+      return amount - 50;
+    } else if (amount > 100) {
+      return 2 * (amount - 100) + 50;
+    }```
+    ````
+
+## Tecnical Requirements
+
+- ReactJS
+- Simulate an asynchronous API to fetch data
+- Make up a data set
+- Check into GitHub
+
+## Steps
 
 First, run the development server:
 
 ```bash
+npm install
+# and
 npm run dev
 # or
 yarn dev
@@ -12,29 +35,19 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+`````
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Second, open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Third, sign in with the following credentials:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Email: superawesome@fake.com
+- Password: Password123
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Explanation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Every bit of the implementation is intentional:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- The API is a simulation intended to demonstrate knowledge of HTTP request methods, as well as data formats and streams. For a production-grade application, the business logic associated with purchases, for example, could be established as a cloud function within a serveless framework.
+- Outside of authentication and a conditional history push, there are no other considerations for security and routing. A happy path is assumed. The aforementioned items should be built as extensive features.
+- A product application would have treater attention paid to render and performance patterns - client vs server, code-splitting, etc.
