@@ -7,12 +7,12 @@ A retailer offers a rewards program to its customers, awarding points based on e
 - Given a record of every transaction during a three-month period, calculate the reward points earned for each customer per month and total.
 - A customer reeives 2 points for every dollar spent of $100 in each transaction, plus 1 point for every dollar spent between $50 and $100 in each transaction. (e.g. a $120 purchase = 2 _ $20 + 1 _ $50 = 90 points)
 
-`````if (amount >= 50 && amount < 100) {
+```javascript
+if (amount >= 50 && amount < 100) {
       return amount - 50;
     } else if (amount > 100) {
       return 2 * (amount - 100) + 50;
     }```
-    ````
 
 ## Tecnical Requirements
 
