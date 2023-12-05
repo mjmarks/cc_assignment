@@ -10,9 +10,9 @@ A retailer offers a rewards program to its customers, awarding points based on e
 ```javascript
 if (amount >= 50 && amount < 100) {
       return amount - 50;
-    } else if (amount > 100) {
+} else if (amount > 100) {
       return 2 * (amount - 100) + 50;
-    }
+}
 ```
 
 ## Tecnical Requirements
